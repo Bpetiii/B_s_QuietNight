@@ -23,8 +23,7 @@ public class MobSpawnListener implements Listener
         if (event.getSpawnReason() != CreatureSpawnEvent.SpawnReason.NATURAL) return;
 
         // And if the mob cannot spawn in light
-        Creature mob = (Creature) event.getEntity();
-        if (!darknessNeedingMobs.contains(mob.getType())) return;
+        if (!darknessNeedingMobs.contains(event.getEntity().getType())) return;
 
         // And if the mob tries to spawn under the sky
         if (event.getLocation().getBlock().getLightFromSky() > 0)
