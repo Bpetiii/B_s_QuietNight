@@ -1,4 +1,5 @@
 name: B_s_QuietNight
-version: '1.0'
+version: '2.0'
 main: biraw.online.b_s_QuietNight.B_s_QuietNight
-api-version: '1.18'
+author: [BiRaw]
+api-version: '1.21'
