@@ -22,7 +22,7 @@ public final class B_s_QuietNight extends JavaPlugin {
             EntityType.STRAY, EntityType.BOGGED
     ));
 
-    private static ArrayList<World> worlds = new ArrayList<>(Arrays.asList(Bukkit.getWorlds().get(0)));
+    private static ArrayList<World> worlds = new ArrayList<>();
 
 
     public static ArrayList<EntityType> getMobs() {
@@ -66,6 +66,14 @@ public final class B_s_QuietNight extends JavaPlugin {
             }
             catch (Exception ignored) {
                 this.getLogger().severe(name + " is an invalid mob name!");
+            }
+        });
+
+        Bukkit.getWorlds().forEach(world -> {
+            if (world.getEnvironment() == World.Environment.NORMAL ||
+                    world.getEnvironment() ==  World.Environment.CUSTOM)
+            {
+                worlds.add(world);
             }
         });
 
