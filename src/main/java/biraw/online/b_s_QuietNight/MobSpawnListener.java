@@ -14,6 +14,9 @@ public class MobSpawnListener implements Listener
         // If the spawn location is in the OVERWORLD,
         if (event.getLocation().getWorld().getEnvironment() != World.Environment.NORMAL) return;
 
+        // And the world is in the config
+        if (!B_s_QuietNight.getWorlds().contains(event.getLocation().getWorld())) return;
+
         // If the spawning is because natural reasons,
         if (event.getSpawnReason() != CreatureSpawnEvent.SpawnReason.NATURAL) return;
 
